@@ -1,0 +1,22 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  height: 63px;
+}
+.logo__img {
+  width: 162px;
+}
+@media (min-width: 1440px) {
+  .logo {
+    height: 96px;
+  }
+  .logo__img {
+    width: 200px;
+  }
+}/*# sourceMappingURL=main.css.map */

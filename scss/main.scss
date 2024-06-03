@@ -1,0 +1,32 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+
+@mixin desktop {
+    @media (min-width: 1440px) {
+        @content;
+    }
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    height: 63px;
+
+    &__img {
+        width: 162px;
+    }
+
+    // Desktop 
+    @include desktop {
+        height: 96px;
+
+        &__img {
+            width: 200px;
+        }
+
+    }
+}
