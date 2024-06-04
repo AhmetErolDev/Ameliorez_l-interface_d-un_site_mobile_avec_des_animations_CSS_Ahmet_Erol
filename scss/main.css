@@ -1,5 +1,6 @@
 body {
   font-family: "Roboto", sans-serif;
+  background: #F6F6F6;
 }
 
 .logo {
@@ -33,4 +34,64 @@ body {
 }
 .location p {
   font-size: 16px;
+  font-weight: 500;
+}
+@media (min-width: 1440px) {
+  .location {
+    box-shadow: none;
+  }
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.hero h1 {
+  margin-top: 39px;
+  font-size: 24px;
+  font-weight: 700;
+  width: 275px;
+}
+.hero p {
+  width: 315px;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 300;
+}
+.hero button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 27px;
+  width: 218px;
+  height: 46px;
+  border-radius: 25px;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  margin-bottom: 57px;
+}
+@media (min-width: 1440px) {
+  .hero h1 {
+    width: 645px;
+    margin-top: 45px;
+    font-size: 40px;
+  }
+  .hero p {
+    margin-top: 25px;
+    width: 531px;
+  }
+  .hero button {
+    margin-top: 28px;
+    width: 218px;
+    height: 50px;
+    margin-bottom: 30px;
+  }
 }/*# sourceMappingURL=main.css.map */
