@@ -3,11 +3,72 @@ body {
   background: #F6F6F6;
   animation: fadeIn 0.9s ease-in-out;
 }
-@keyframes fadeIn {
+body body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+body .content {
+  display: none;
+}
+body .loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 999;
+  animation: fadeout 1s forwards;
+  animation-delay: 1s;
+}
+body .loader {
+  color: #FF79DA;
+}
+body .loader,
+body .loader:after {
+  box-sizing: border-box;
+}
+body .loader {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+body .loader:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6.4px solid currentColor;
+  border-color: currentColor transparent currentColor transparent;
+  animation: loader 1.2s linear infinite;
+}
+@keyframes loader {
   0% {
-    opacity: 0;
+    transform: rotate(0deg);
   }
   100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeout {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+body .loader-container + .content {
+  animation: showContent 1s forwards;
+  animation-delay: 4s;
+}
+@keyframes showContent {
+  to {
+    display: block;
     opacity: 1;
   }
 }
@@ -18,9 +79,25 @@ body {
   align-items: center;
   background: white;
   height: 63px;
+  gap: 42px;
+  position: relative;
 }
 .logo__img {
   width: 162px;
+}
+.logo .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.logo .arrow i {
+  font-size: 22px;
+  color: #000;
 }
 @media (min-width: 1440px) {
   .logo {
@@ -29,6 +106,29 @@ body {
   .logo__img {
     width: 200px;
   }
+}
+
+.heart-checkbox {
+  z-index: 50;
+}
+.heart-checkbox input[type=checkbox] {
+  display: none;
+}
+.heart-checkbox input[type=checkbox]:checked + label:before {
+  display: none;
+}
+.heart-checkbox input[type=checkbox]:checked + label:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f004";
+  font-weight: 900;
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.heart-checkbox input[type=checkbox] + label:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f004";
 }
 
 .location {
@@ -51,6 +151,31 @@ body {
   }
 }
 
+.gradient-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #999;
+  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.07);
+  color: #fff;
+  padding: 15.5px 22px;
+  border-radius: 50px;
+  transition: 300ms;
+  transition-duration: 250ms;
+  font-weight: 500;
+  font-size: 15px;
+  margin-top: 27px;
+  margin-bottom: 57px;
+  cursor: pointer;
+}
+.gradient-button:hover {
+  background-color: #fff;
+  box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.1);
+}
+
 .hero {
   display: flex;
   justify-content: center;
@@ -69,28 +194,6 @@ body {
   margin-top: 10px;
   font-size: 18px;
   font-weight: 300;
-}
-.hero button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 27px;
-  width: 218px;
-  height: 46px;
-  border-radius: 25px;
-  background: linear-gradient(0.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 16px;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
-  margin-bottom: 57px;
-  transition-duration: 500ms;
-}
-.hero button:hover {
-  background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
 }
 @media (min-width: 1440px) {
   .hero h1 {
@@ -199,6 +302,16 @@ body {
   }
 }
 
+@keyframes fade-in-left {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .restaurants {
   width: 335px;
   margin: 0 auto;
@@ -219,6 +332,9 @@ body {
 .restaurants .cards .card {
   border-radius: 15px;
   background: white;
+  position: relative;
+  animation: fade-in-left 3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: 1s;
 }
 .restaurants .cards .card .menu {
   text-decoration: none;
@@ -275,6 +391,22 @@ body {
   margin-right: 25px;
   font-size: 22px;
   color: black;
+}
+.restaurants .cards .card .heart-placement {
+  font-size: 22px;
+  position: absolute;
+  right: 25px;
+  bottom: 22px;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @media (min-width: 768px) {
   .restaurants {

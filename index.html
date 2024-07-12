@@ -14,11 +14,14 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
-    <header class=" header">
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <header class="header">
         <div class="logo">
             <a href="/">
                 <img class="logo__img" src="images/logo/ohmyfood.png" alt="Logo noir OhMyFood">
@@ -26,14 +29,14 @@
         </div>
     </header>
     <main>
-        <section class="location">
+        <div class="location">
             <i class="fa-solid fa-location-dot"></i>
             <p>Paris, Belleville</p>
-        </section>
+        </div>
         <section class="hero">
             <h1>Réservez le menu qui vous convient</h1>
             <p>Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
-            <button>Explorer nos restaurants</button>
+            <button class="gradient-button">Explorer nos restaurants</button>
         </section>
         <section class="steps">
             <div class="container">
@@ -75,14 +78,16 @@
                                 <h3 class="title">La palette du goût</h3>
                                 <p class="info">Ménilmontant</p>
                             </div>
-                            <div class="right">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
                         </div>
                     </a>
+                    <div class="heart-placement right heart-checkbox">
+                        <input type="checkbox" id="like1">
+                        <label for="like1">
+                        </label>
+                    </div>
                 </div>
                 <div class="card">
-                    <a class="menu" href="./la-palette-du-gout.html">
+                    <a class="menu" href="./la-note-enchantee.html">
                         <div class="picture">
                             <div class="new">
                                 Nouveau
@@ -95,31 +100,35 @@
                                 <h3 class="title">La note enchantée</h3>
                                 <p class="info">Charonne</p>
                             </div>
-                            <div class="right">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
                         </div>
                     </a>
+                    <div class="heart-placement right heart-checkbox">
+                        <input type="checkbox" id="like2">
+                        <label for="like2">
+                        </label>
+                    </div>
                 </div>
                 <div class="card">
-                    <a class="menu" href="./la-palette-du-gout.html">
+                    <a class="menu" href="./a-la-francaise.html">
                         <div class="picture">
                             <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
-                                alt="image restaurant palette-du-gout">
+                                alt="image restaurant à la française">
                         </div>
                         <div class="bottom">
                             <div class="left">
                                 <h3 class="title">À la française</h3>
                                 <p class="info">Cité Rouge</p>
                             </div>
-                            <div class="right">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
                         </div>
                     </a>
+                    <div class="heart-placement right heart-checkbox">
+                        <input type="checkbox" id="like3">
+                        <label for="like3">
+                        </label>
+                    </div>
                 </div>
                 <div class="card">
-                    <a class="menu" href="./la-palette-du-gout.html">
+                    <a class="menu" href="./le-delice-des-sens.html">
                         <div class="picture">
                             <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
                                 alt="image restaurant palette-du-gout">
@@ -129,11 +138,13 @@
                                 <h3 class="title">Le délice des sens</h3>
                                 <p class="info">Folie-Méricourt</p>
                             </div>
-                            <div class="right">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
                         </div>
                     </a>
+                    <div class="heart-placement right heart-checkbox">
+                        <input type="checkbox" id="like4">
+                        <label for="like4">
+                        </label>
+                    </div>
                 </div>
             </div>
         </section>
