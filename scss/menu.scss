@@ -101,6 +101,7 @@ body {
         margin: 0 auto;
         padding: 0 13px;
 
+
         @include tablet {
             max-width: 634px;
         }
@@ -115,6 +116,8 @@ body {
             border-bottom: 3px solid #99E2D0;
             width: 48px;
             margin-bottom: 18px;
+            animation: fade-in-left 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            animation-delay: 300ms;
         }
 
         .card {
@@ -129,6 +132,8 @@ body {
             height: 69px;
             cursor: pointer;
             overflow: hidden;
+            animation: fade-in-left 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            animation-delay: 300ms;
 
             .container {
                 display: flex;
